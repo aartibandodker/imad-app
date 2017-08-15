@@ -5,15 +5,36 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
-    title:'article one',
-    heading:'article one',
-    date:'15 august 2017',
-    content:`
-    <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
-    <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
-    <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
-    `
+var articles={
+    articleOne:{
+        title:'article one',
+        heading:'article one',
+        date:'15 august 2017',
+        content:`
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
+        `
+    },
+articleTwo:{
+        title:'article one',
+        heading:'article one',
+        date:'15 august 2017',
+        content:`
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
+        `
+        },
+articleThree:{
+        title:'article one',
+        heading:'article one',
+        date:'15 august 2017',
+        content:`
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
+        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>`
+        }
 };
 
 function createTemplate(data){
