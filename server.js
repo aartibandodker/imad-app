@@ -50,7 +50,7 @@ var htmlTemplate=
          <meta name="viewport" content="width=device-width , initial-scale=1"/>
          <link href="/ui/style.css" rel="stylesheet" />
         <style>
-                </style>
+        </style>
     </head>
     
     <body>
@@ -72,9 +72,9 @@ var htmlTemplate=
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/:articleName', function (req, res) {
-    var articleName=req.param.articleName;
-  res.send(createTemplate(articles[articleName]));
+app.get('/article-one', function (req, res) {
+   // var articleName=req.param.articleName;
+  res.send(createTemplate(articles[article-one]));
 });
 
 app.get('/ui/style.css', function (req, res) {
