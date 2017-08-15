@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles={
-    articleOne:{
+    'article-one':{
         title:'article one',
         heading:'article one',
         date:'15 august 2017',
@@ -16,24 +16,22 @@ var articles={
         <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
         `
     },
-articleTwo:{
-        title:'article one',
-        heading:'article one',
-        date:'15 august 2017',
+    'article-two':{
+        title:'article two',
+        heading:'article two',
+        date:'15 August 2018',
         content:`
-        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
-        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
-        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
-        `
+        <p>This is Aricle two.This is Aricle two.This is Aricle two.This is Aricle two.This is Aricle two.This is Aricle two.</p>
+                `
         },
-articleThree:{
-        title:'article one',
-        heading:'article one',
+    'article-three':{
+        title:'article three',
+        heading:'article three',
         date:'15 august 2017',
         content:`
-        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
-        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>
-        <p>This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.This is Aricle One.</p>`
+        <p>This is Aricle Three.</p>
+        <p>This is Aricle Three.</p>
+        `
         }
 };
 
@@ -73,8 +71,9 @@ var htmlTemplate=
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    var articleName=req.param.articleName;
+  res.send(createTemplate(articles[articlename]));
 });
 app.get('/article-two', function (req, res) {
   res.send('article two will be served shortly');
